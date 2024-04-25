@@ -18,7 +18,7 @@ import { toast } from "sonner";
 import { db } from "../../../../../utils/dbConfig.js";
 import { Budgets } from "../../../../../utils/schema.jsx";
 
-const CreateBudget = () => {
+const CreateBudget = ({ refreshData }) => {
   const [emojiIcon, setEmojiIcon] = useState("😀");
   const [openEmojiPicker, setOpenEmojuPicker] = useState(false);
   const [name, setName] = useState("");
@@ -38,6 +38,7 @@ const CreateBudget = () => {
       .returning({ insertedId: Budgets.id });
 
     if (result) {
+      refreshData();
       toast("Novo orçamento adicionado!");
     }
   };
