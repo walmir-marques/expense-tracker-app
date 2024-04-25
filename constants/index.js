@@ -12,7 +12,7 @@ export const menuList = [
     id: 2,
     name: "Orçamentos",
     icon: PiggyBank,
-    path: "/dashboard/budget",
+    path: "/dashboard/budgets",
   },
   {
     id: 3,
